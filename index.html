@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- DataPortfolio Branding -->
+    <meta property="og:title" content="armaankhan's Portfolio" />
+    <meta property="og:url" content="https://mohammadarmaankhan1-boop.github.io/armaankhanportfolio" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Professional portfolio created with DataPortfolio" />
+    <meta name="twitter:title" content="armaankhan's Portfolio" />
+    <meta name="twitter:description" content="Professional portfolio created with DataPortfolio" />
+    <!-- End DataPortfolio Branding -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armaan Khan - Portfolio</title>
+    <meta name="description" content="Business Analyst intern with experience in analyzing sales data, conducting customer surveys, and developing data-driven reports. Currently pursuing an MSc in B">
+    
+
+    <!-- OpenGraph Meta Tags for Social Sharing -->
+    <meta property="og:title" content="Armaan Khan - Portfolio">
+    <meta property="og:description" content="Business Analyst intern with experience in analyzing sales data, conducting customer surveys, and developing data-driven reports. Currently pursuing an MSc in B">
+    <meta property="og:type" content="website">
+    
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Armaan Khan - Portfolio">
+    <meta name="twitter:description" content="Business Analyst intern with experience in analyzing sales data, conducting customer surveys, and developing data-driven reports. Currently pursuing an MSc in B">
+    
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#18181B',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&family=Exo+2:wght@300;400;500;600;700&family=Rajdhani:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&family=Audiowide&family=Bungee&family=Share+Tech+Mono&family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500;600;700&family=Source+Code+Pro:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+        
+        :root {
+            --primary-color: #18181B;
+            --bg-color: #FFFFFF;
+            --text-color: #18181B;
+            --accent-color: #71717A;
+            --effect-color: #18181B;
+            --effect-opacity: 0.3;
+            --font-family: &#x27;Inter&#x27;, sans-serif;
+            --border-radius: 8px;
+            --glass-blur: 0px;
+            /* Dynamic card backgrounds - detect dark themes and adjust */
+            /* Card backgrounds - fully opaque for consistent preview/published rendering */
+            --card-bg: rgba(255, 255, 255, 1);
+            --card-bg-alt: rgba(249, 250, 251, 1);
+            --card-text: var(--text-color);
+            --border-color: color-mix(in srgb, var(--text-color) 15%, transparent);
+        }
+
+        /* Override Tailwind default border color to follow theme */
+        *, ::before, ::after {
+            border-color: var(--border-color);
+        }
+        
+        /* ═══════════════════════════════════════════════════════════════════════
+           CRITICAL: Global Flex-Lock Reset for Windows/Mac Parity
+           This prevents margin collapse and white gap bugs on all platforms
+           ═══════════════════════════════════════════════════════════════════════ */
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Global Input Reset - Prevents browser default white backgrounds on inputs */
+        input, textarea, select {
+            background-color: transparent !important;
+            background: transparent !important;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            -webkit-text-size-adjust: 100%;
+            line-height: 1.5;
+        }
+        
+        body {
+            margin: 0 !important;
+            padding: 0 !important;
+            min-height: 100vh;
+            width: 100%;
+            /* FLEX display traps child margins inside the body - prevents Windows gap */
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+            background-color: var(--bg-color);
+        }
+        
+        #root, #app-container, main, .portfolio-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        
+        /* Standardize Scrollbar for Windows/Mac parity */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-color);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 5px;
+            border: 2px solid var(--bg-color);
+        }
+        
+        body {
+            font-family: var(--font-family);
+            color: var(--text-color);
+            background: #FFFFFF;
+        }
+        
+        /* Card styling with dynamic border radius */
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            color: var(--card-text);
+        }
+
+        .card-alt {
+            background: var(--card-bg-alt);
+            border-radius: var(--border-radius);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            color: var(--card-text);
+        }
+
+        .card:hover, .card-alt:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Ensure text inside cards uses card text color */
+        .card h3, .card-alt h3 { color: var(--card-text); }
+        .card p, .card-alt p { color: var(--card-text); opacity: 0.85; }
+        .card li, .card-alt li { color: var(--card-text); opacity: 0.85; }
+        .card span, .card-alt span { color: var(--card-text); }
+
+        /* Projects Grid Layout - Uniform Cards */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .bento-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .bento-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* Bento card content styling - all cards same size */
+        .bento-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            min-height: 200px;
+        }
+
+        .bento-card .card-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Button styling with dynamic border radius */
+        .btn {
+            border-radius: calc(var(--border-radius) * 0.67);
+        }
+        
+        /* Badge/tag styling - always rounded */
+        .badge {
+            border-radius: 9999px;
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Section separator - spacious and aesthetically pleasing */
+        :root {
+            --divider-opacity: 0;
+        }
+        
+        .section-separator {
+            margin: 4rem auto;
+            height: 2px;
+            max-width: 120px;
+            background: linear-gradient(to right, transparent, var(--accent-color), transparent);
+            opacity: var(--divider-opacity);
+            display: none;
+            border-radius: 1px;
+        }
+        
+        /* Alternative subtle divider for light themes */
+        @media (prefers-color-scheme: light) {
+            .section-separator {
+                background: linear-gradient(to right, transparent, var(--primary-color), transparent);
+            }
+        }
+        
+        /* CRITICAL: Preserve whitespace in bio/description text */
+        .bio-text, .description-text, .timeline-content p, .project-description {
+            white-space: pre-wrap;
+        }
+        
+        /* Avatar placeholder styling */
+        .avatar-placeholder {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+        }
+        
+        .avatar-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+            border: 4px solid var(--primary-color);
+        }
+        
+        /* ═══════════════════════════════════════════════════════════════════════
+           ULTRA ARCHITECT LAYOUT VARIANTS
+           ═══════════════════════════════════════════════════════════════════════ */
+        
+        /* Timeline Layout - Vertical line with dots */
+        .timeline-container {
+            position: relative;
+            padding: 2rem 0;
+        }
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+            top: 0;
+            bottom: 0;
+            opacity: 0.3;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            border: 4px solid var(--bg-color);
+            z-index: 10;
+            box-shadow: 0 0 0 4px var(--primary-color);
+        }
+        @media (max-width: 768px) {
+            .timeline-line { left: 20px !important; transform: none !important; }
+            .timeline-item { padding-left: 50px; }
+            .timeline-dot { left: 20px !important; }
+            .timeline-content { text-align: left !important; padding: 0 !important; }
+            .timeline-date { text-align: left !important; padding: 0 !important; margin-bottom: 0.5rem; }
+        }
+        
+        /* Masonry Grid Layout */
+        .masonry-grid {
+            column-count: 3;
+            column-gap: 1.5rem;
+        }
+        .masonry-item {
+            break-inside: avoid;
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 1.5rem;
+        }
+        @media (max-width: 1024px) { .masonry-grid { column-count: 2; } }
+        @media (max-width: 640px) { .masonry-grid { column-count: 1; } }
+        
+        /* Skill Cloud Layout */
+        .skill-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+        .skill-cloud .skill-tag:nth-child(3n+1) { font-size: 1.1rem; }
+        .skill-cloud .skill-tag:nth-child(3n+2) { font-size: 0.9rem; }
+        .skill-cloud .skill-tag:nth-child(3n) { font-size: 1rem; }
+        .skill-cloud .skill-tag:nth-child(5n) { font-size: 1.2rem; }
+        .skill-tag {
+            transition: transform 0.2s ease;
+        }
+        .skill-tag:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Split Hero Layout */
+        .hero-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        @media (max-width: 768px) {
+            .hero-split {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-split .hero-image { order: -1; }
+        }
+        .hero-split .hero-image img,
+        .hero-split .hero-image .avatar-placeholder {
+            width: 280px;
+            height: 280px;
+            border-radius: 1rem;
+        }
+
+        /* Languages Grid Layout */
+        .languages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        @media (min-width: 768px) {
+            .languages-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        .language-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 1.25rem;
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            color: var(--card-text);
+        }
+        .language-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .language-card .language-name {
+            font-weight: 600;
+            color: var(--card-text);
+        }
+        .language-card .language-proficiency {
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+        }
+    </style>
+<style id="preserve-whitespace">.bio-text,.description-text,.timeline-content p,.project-description{white-space:pre-wrap}</style><style id="theme-borders">:root{--border-color:color-mix(in srgb,var(--text-color) 15%,transparent)}*,::before,::after{border-color:var(--border-color)}</style><link id="all-fonts" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&family=Exo+2:wght@300;400;500;600;700&family=Rajdhani:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&family=Audiowide&family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500;600;700&family=Source+Code+Pro:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Lora:wght@400;500;600;700&family=Merriweather:wght@300;400;700;900&family=Fira+Code:wght@300;400;500;600;700&family=Bebas+Neue&family=Righteous&family=Fredoka:wght@300;400;500;600;700&family=Archivo+Black&family=Chakra+Petch:wght@300;400;500;600;700&family=Press+Start+2P&family=Rubik+Mono+One&family=Permanent+Marker&family=Comfortaa:wght@300;400;500;600;700&family=Titan+One&family=Unbounded:wght@300;400;500;600;700;800;900&display=swap" />
+<style id="theme-font">body,*:not(i):not([class*="fa"]):not([class*="icon"]):not(svg):not(path){font-family:'Inter', sans-serif !important}</style></head>
+<body>
+
+    <!-- Header with Optional Custom Logo -->
+
+    <!-- Sections Container with Flexbox Ordering - flex-1 ensures footer stays at bottom -->
+    <div class="flex flex-col flex-1">
+
+    <!-- Hero Section -->
+    <!-- Centered Hero Layout (Default) -->
+    <section id="hero" class="min-h-screen flex items-center justify-center" style="order: 0;">
+        <div class="container mx-auto px-6 py-20 text-center">
+            <div class="max-w-4xl mx-auto">
+                <!-- Profile Picture / Avatar - Only shown if showProfileImage is true -->
+                <div class="mb-8 flex justify-center">
+                    <img src="https://i.postimg.cc/rp2ckH5R/IMG-8321.jpg" alt="Armaan Khan" class="avatar-image" />
+                </div>
+                
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 text-gradient">Armaan Khan</h1>
+                <p class="text-2xl md:text-3xl mb-8" style="color: var(--text-color); opacity: 0.8;">Business Analyst intern</p>
+                
+                <div class="flex flex-wrap justify-center gap-4 mb-10" style="color: var(--text-color); opacity: 0.6;">
+                    <span class="flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt" style="color: var(--primary-color);"></i>
+                        Slough SL2
+                    </span>
+                    <span class="flex items-center gap-2">
+                        <i class="fas fa-envelope" style="color: var(--primary-color);"></i>
+                        mohammadarmaankhan1@gmail.com
+                    </span>
+                    <span class="flex items-center gap-2">
+                        <i class="fas fa-phone" style="color: var(--primary-color);"></i>
+                        +44 7521 941491
+                    </span>
+                </div>
+            </div>
+
+            <p class="text-lg max-w-2xl mx-auto mb-10 bio-text" style="color: var(--text-color); opacity: 0.8;">Business Analyst intern with experience in analyzing sales data, conducting customer surveys, and developing data-driven reports. Currently pursuing an MSc in Business Analytics at University College London and holds a BSc in Business and Management from the University of Reading. Has worked at Hokkaido Mart and SUMS Group, focusing on data analysis, marketing, and communications. Proficient in SQL, Python, Power BI, and other data analytics tools.</p>
+            
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="https://www.linkedin.com/public-profile/settings?lipi&#x3D;urn%3Ali%3Apage%3Ad_flagship3_profile_self_edit_contact-info%3BNzam3ispRJSZyblhIGpPDA%3D%3D" target="_blank" rel="noopener noreferrer" class="btn inline-flex items-center gap-2 px-6 py-3 text-white hover:opacity-90 transition-opacity" style="background-color: var(--primary-color);">
+                    <i class="fab fa-linkedin"></i>
+                    LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+    <div class="section-separator"></div>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20" style="order: 3;">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center" style="color: var(--text-color);">Experience</h2>
+                
+                <!-- Cards Layout (Default) -->
+                <div class="space-y-8">
+                    <div class="card-alt p-6">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-semibold" style="color: var(--text-color);">Business Analyst intern</h3>
+                                <p class="font-medium" style="color: var(--primary-color);">HOKKAIDO MART</p>
+                            </div>
+                            <span class="text-sm mt-2 md:mt-0" style="color: var(--text-color); opacity: 0.6;">Oct 2025 - Dec 2025</span>
+                        </div>
+                        <ul class="list-disc list-inside space-y-1" style="color: var(--text-color); opacity: 0.8;">
+                            <li>Analysed Hokkaido Mart’s monthly sales and receivables data via SQL to quantify a measurable cash - flow gap; recommended tighter credit limits and a structured collections schedule, reducing Days Sales Outstanding by 15 days.</li>
+                            <li>Led a 1 50 + customer survey analysis on channel behaviour, building Power BI dashboards to identify an additional awareness gap; leveraged customer behaviour data to translate key drivers into KPIs, increasing website adoption from 6% to 13%.</li>
+                            <li>Collaborated with 2 cross - functional teams to gather inputs, clean and structure datasets, and synthesise insights into a clear, data - driven report delivered to senior leadership.</li>
+                        </ul>
+                    </div>
+                    <div class="card-alt p-6">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-semibold" style="color: var(--text-color);">Marketing and Communications Intern</h3>
+                                <p class="font-medium" style="color: var(--primary-color);">SUMS GROUP</p>
+                            </div>
+                            <span class="text-sm mt-2 md:mt-0" style="color: var(--text-color); opacity: 0.6;">Jun 2025 - Jul 2025</span>
+                        </div>
+                        <ul class="list-disc list-inside space-y-1" style="color: var(--text-color); opacity: 0.8;">
+                            <li>Initiated client outreach to 10+ affiliate members, scheduling discovery calls and maintaining organised contact logs in Excel sheets to aid the business development pipeline, resulting in 8 booked calls over two weeks.</li>
+                            <li>Utilised Google Analytics 4 to analyse website performance, benchmarking against prior periods and delivering weekly performance reports to senior management; actions implemented raised demo requests by 11%.</li>
+                            <li>Audited end - to - end customer journeys and developed 3+ journey maps, highlighting friction points on the current website and recommending improvements to enhance client satisfaction and click - through rates.</li>
+                        </ul>
+                    </div>
+                    <div class="card-alt p-6">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-semibold" style="color: var(--text-color);">Store Assistant</h3>
+                                <p class="font-medium" style="color: var(--primary-color);">ASDA SUPERSTORE</p>
+                            </div>
+                            <span class="text-sm mt-2 md:mt-0" style="color: var(--text-color); opacity: 0.6;">Dec 2023 - Dec 2025</span>
+                        </div>
+                        <ul class="list-disc list-inside space-y-1" style="color: var(--text-color); opacity: 0.8;">
+                            <li>Led shifts of up to 6 colleagues, running daily huddles and real - time KPI boards, keeping produce availability in the 95%+ range; exceeded sales targets by 7% during peak weeks.</li>
+                            <li>Liaised with managers to identify workflow delays and implement a priority - based workflow, sequencing pick and place tasks with timed handovers, improving store efficiency and earning &#x27;Employee of the Month&#x27; in May 2024.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="section-separator"></div>
+
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20" style="order: 1;">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center" style="color: var(--text-color);">Skills</h2>
+                
+                <!-- Default Tags Layout -->
+                <div class="flex flex-wrap justify-center gap-3">
+                    <span class="badge px-4 py-2 text-white font-medium shadow-sm" style="background: linear-gradient(135deg, var(--primary-color), var(--accent-color));">
+                        SQL
+                    </span>
+                    <span class="badge px-4 py-2 text-white font-medium shadow-sm" style="background: linear-gradient(135deg, var(--primary-color), var(--accent-color));">
+                        Python
+                    </span>
+                    <span class="badge px-4 py-2 text-white font-medium shadow-sm" style="background: linear-gradient(135deg, var(--primary-color), var(--accent-color));">
+                        Power BI
+                    </span>
+                    <span class="badge px-4 py-2 text-white font-medium shadow-sm" style="background: linear-gradient(135deg, var(--primary-color), var(--accent-color));">
+                        Tableau
+                    </span>
+                    <span class="badge px-4 py-2 text-white font-medium shadow-sm" style="background: linear-gradient(135deg, var(--primary-color), var(--accent-color));">
+                        RStudio
+                    </span>
+                    <span class="badge px-4 py-2 text-white font-medium shadow-sm" style="background: linear-gradient(135deg, var(--primary-color), var(--accent-color));">
+                        Predictive Modelling
+                    </span>
+                    <span class="badge px-4 py-2 text-white font-medium shadow-sm" style="background: linear-gradient(135deg, var(--primary-color), var(--accent-color));">
+                        Excel
+                    </span>
+                    <span class="badge px-4 py-2 text-white font-medium shadow-sm" style="background: linear-gradient(135deg, var(--primary-color), var(--accent-color));">
+                        GA4
+                    </span>
+                    <span class="badge px-4 py-2 text-white font-medium shadow-sm" style="background: linear-gradient(135deg, var(--primary-color), var(--accent-color));">
+                        Mailchimp
+                    </span>
+                    <span class="badge px-4 py-2 text-white font-medium shadow-sm" style="background: linear-gradient(135deg, var(--primary-color), var(--accent-color));">
+                        HubSpot
+                    </span>
+                    <span class="badge px-4 py-2 text-white font-medium shadow-sm" style="background: linear-gradient(135deg, var(--primary-color), var(--accent-color));">
+                        Canva
+                    </span>
+                    <span class="badge px-4 py-2 text-white font-medium shadow-sm" style="background: linear-gradient(135deg, var(--primary-color), var(--accent-color));">
+                        Data Analytics
+                    </span>
+                    <span class="badge px-4 py-2 text-white font-medium shadow-sm" style="background: linear-gradient(135deg, var(--primary-color), var(--accent-color));">
+                        Statistical Analysis
+                    </span>
+                    <span class="badge px-4 py-2 text-white font-medium shadow-sm" style="background: linear-gradient(135deg, var(--primary-color), var(--accent-color));">
+                        Marketing Analytics
+                    </span>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <div class="section-separator"></div>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20" style="order: 4;">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center" style="color: var(--text-color);">Education</h2>
+                
+                <!-- Cards Layout (Default) -->
+                <div class="space-y-6">
+                    <div class="card p-6 shadow-sm">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-semibold" style="color: var(--text-color);">MSc Business Analytics</h3>
+                                <p class="font-medium" style="color: var(--primary-color);">UNIVERSITY COLLEGE LONDON</p>
+                            </div>
+                            <span class="text-sm mt-2 md:mt-0" style="color: var(--text-color); opacity: 0.6;">2025 - 2026</span>
+                        </div>
+                        <p class="mb-3 description-text" style="color: var(--text-color); opacity: 0.8;">Relevant modules include: Programming for Business Analytics (76), Marketing Analytics (70), Statistical Foundations of Business Analytics, Business Strategy and Analytics, Predictive Analytics, Machine Learning for Business and Data Visualisation.</p>
+                    </div>
+                    <div class="card p-6 shadow-sm">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-semibold" style="color: var(--text-color);">BSc Business and Management</h3>
+                                <p class="font-medium" style="color: var(--primary-color);">UNIVERSITY OF READING</p>
+                            </div>
+                            <span class="text-sm mt-2 md:mt-0" style="color: var(--text-color); opacity: 0.6;">2022 - 2025</span>
+                        </div>
+                        <p class="mb-3 description-text" style="color: var(--text-color); opacity: 0.8;">Classification: upper 2:1. Relevant modules include: Data Analytics (70), Understanding Leadership (78), Business Strategy and Operations (70), Communication and Persuasion in Business (76) and Business Ethics (70).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-20" style="order: 5;">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center" style="color: var(--text-color);">Certifications</h2>
+                
+                <div class="space-y-4">
+                    <div class="card p-5 shadow-sm">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold" style="color: var(--text-color);">Power BI certificate</h3>
+                                <p class="text-sm mt-1" style="color: var(--text-color); opacity: 0.7;">University of Reading</p>
+                            </div>
+                            <span class="text-sm mt-2 md:mt-0" style="color: var(--text-color); opacity: 0.5;">Apr 2025</span>
+                        </div>
+                    </div>
+                    <div class="card p-5 shadow-sm">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold" style="color: var(--text-color);">Commercial awareness certificate</h3>
+                                <p class="text-sm mt-1" style="color: var(--text-color); opacity: 0.7;">University of Reading</p>
+                            </div>
+                            <span class="text-sm mt-2 md:mt-0" style="color: var(--text-color); opacity: 0.5;">Apr 2025</span>
+                        </div>
+                    </div>
+                    <div class="card p-5 shadow-sm">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold" style="color: var(--text-color);">Google data analytics certificate</h3>
+                                <p class="text-sm mt-1" style="color: var(--text-color); opacity: 0.7;">Google</p>
+                            </div>
+                            <span class="text-sm mt-2 md:mt-0" style="color: var(--text-color); opacity: 0.5;">Jul 2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="section-separator"></div>
+    
+    <!-- Publications Section -->
+    <section id="publications" class="py-20" style="order: 6;">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center" style="color: var(--text-color);">Publications</h2>
+                
+                <div class="space-y-4">
+                    <div class="card p-5 shadow-sm">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+                            <div class="flex-1">
+                                <a href="https://sums.ac.uk/info-hub/desert-island-discs-what-universities-must-save-from-the-waves-for-students-during-efficiency-drives/" target="_blank" rel="noopener noreferrer" class="text-lg font-semibold hover:opacity-80" style="color: var(--primary-color);">
+                                    Desert Island Discs: what universities must ‘save from the waves’ for students during efficiency drives <i class="fas fa-external-link-alt text-xs ml-1"></i>
+                                </a>
+                                <p class="text-sm mt-1" style="color: var(--text-color); opacity: 0.7;">Armaan Khan</p>
+                            </div>
+                            <span class="text-sm mt-2 md:mt-0" style="color: var(--text-color); opacity: 0.5;">July 2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="section-separator"></div>
+
+    
+
+    <!-- Contact Section - Concise Card Layout -->
+    <section id="contact" class="py-16" style="order: 7;">
+        <div class="container mx-auto px-6">
+            <div class="max-w-xl mx-auto text-center">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4" style="color: var(--text-color);">Get In Touch</h2>
+                <p class="mb-6" style="color: var(--text-color); opacity: 0.7;">Interested in working together? Let's connect.</p>
+                
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="mailto:mohammadarmaankhan1@gmail.com" class="btn inline-flex items-center gap-2 px-6 py-3 text-white hover:opacity-90 transition-opacity" style="background-color: var(--primary-color);">
+                        <i class="fas fa-envelope"></i>
+                        Email Me
+                    </a>
+                    <a href="https://www.linkedin.com/public-profile/settings?lipi&#x3D;urn%3Ali%3Apage%3Ad_flagship3_profile_self_edit_contact-info%3BNzam3ispRJSZyblhIGpPDA%3D%3D" target="_blank" rel="noopener noreferrer" class="btn inline-flex items-center gap-2 px-6 py-3 border-2 hover:opacity-80 transition-opacity" style="border-color: var(--primary-color); color: var(--primary-color); background: transparent;">
+                        <i class="fab fa-linkedin"></i>
+                        LinkedIn
+                    </a>
+                    <a href="tel:+44 7521 941491" class="btn inline-flex items-center gap-2 px-6 py-3 border-2 hover:opacity-80 transition-opacity" style="border-color: var(--text-color); color: var(--text-color); background: transparent; opacity: 0.8;">
+                        <i class="fas fa-phone"></i>
+                        +44 7521 941491
+                    </a>
+                </div>
+
+                <p class="mt-6 text-sm" style="color: var(--text-color); opacity: 0.5;">
+                    mohammadarmaankhan1@gmail.com
+                </p>
+            </div>
+        </div>
+    </section>
+    <div class="section-separator"></div>
+
+    </div><!-- End Sections Container -->
+
+    <!-- Footer -->
+    <footer id="main-footer" class="py-12" style="background: var(--text-color); color: var(--bg-color);">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p style="opacity: 0.7;" class="mb-4 md:mb-0">© 2026 Armaan Khan. All rights reserved.</p>
+
+                <div class="flex gap-4">
+                    <a href="https://www.linkedin.com/public-profile/settings?lipi&#x3D;urn%3Ali%3Apage%3Ad_flagship3_profile_self_edit_contact-info%3BNzam3ispRJSZyblhIGpPDA%3D%3D" target="_blank" rel="noopener noreferrer" style="opacity: 0.7; color: var(--bg-color);" class="hover:opacity-100 transition-opacity">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="mailto:mohammadarmaankhan1@gmail.com" style="opacity: 0.7; color: var(--bg-color);" class="hover:opacity-100 transition-opacity">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- DataPortfolio Branding - Hidden when remove_branding is true (PRO feature) -->
+        </div>
+    </footer>
+
+<script>
+(function() {
+    // Light reflow for CSS-column layouts only (masonry/bento) after fonts load.
+    // Does NOT toggle body/section display which caused visible empty gaps.
+    window.addEventListener('style-update', function() {
+        if (document.fonts) {
+            document.fonts.ready.then(function() {
+                requestAnimationFrame(function() {
+                    var m = document.querySelector('.masonry-grid');
+                    if (m) { m.style.display = 'none'; m.offsetHeight; m.style.display = ''; }
+                    var b = document.querySelector('.bento-grid');
+                    if (b) { b.style.display = 'none'; b.offsetHeight; b.style.display = ''; }
+                });
+            });
+        }
+    });
+})();
+</script>
+</body>
+</html>
